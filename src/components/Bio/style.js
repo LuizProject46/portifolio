@@ -21,21 +21,21 @@ export const Card = styled.div`
     margin: 40px 40px;
     padding: 30px 30px;
     border-radius: 12px;
-    background: var(--dark);
+    background: ${ props => props.theme === "dark" ? 'var(--dark)' : 'var(--white)'};
 
     
 
 `
 
 export const Title = styled.h1`
-    color: var(--white-smoke);
+    color: ${ props => props.theme === "light" ? 'var(--dark)' : 'var(--white-smoke)'};
     font-size: 24px;
 
 `
 
 export const Description = styled.p`
     font-size: 16px;
-    color: var(--white-smoke);
+    color: ${ props => props.theme === "light" ? 'var(--dark)' : 'var(--white-smoke)'};
     margin: 20px;
     line-height: 25px;
 `
@@ -53,7 +53,7 @@ export const Tech = styled.div`
     width: 120px;
     height: 120px;
     margin: 20px;
-    background: var(--light-dark);
+    background: ${ props => props.theme === "dark" ? 'var(--light-dark)' : 'var(--light-gray)'};
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -65,7 +65,7 @@ export const Tech = styled.div`
 
     &:hover{
         transform: scale(1.2);
-        box-shadow: 0 0 12px var(--light-purple);
+        box-shadow: 0 0 12px ${ props => props.theme === "dark" ? 'var(--light-purple)' : 'var(--primary)'};
     }
 
     

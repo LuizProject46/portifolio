@@ -5,22 +5,25 @@ export const Container = styled.div`
     max-width: 350px;
     height: auto;
     padding: 30px 30px;
-    background: var(--dark);
+    background: ${props => props.theme === 'dark' ? `var(--dark)` : `var(--white)`};
     display: flex;
     justify-content: center;
     margin: 40px 40px;
     border-radius: 12px;
     color: var(--white);
+    position: relative;
 
     @media screen and (max-width: 1200px){
         max-width: 600px;
         margin: 30px auto;
     }
+
 `
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     
 `
 export const ImageContainer = styled.div`
@@ -55,7 +58,7 @@ export const SocialContainer = styled.div`
 
     & a{
         text-decoration: none;
-        color: var(--white-smoke);
+        color: ${ props => props.theme === "light" ? 'var(--dark)' : 'var(--white-smoke)'};
     }
 
 `
@@ -63,14 +66,21 @@ export const SocialContainer = styled.div`
 export const TextName = styled.h3`
     font-size: 20px;
     margin: 30px 0 10px 0;
-    color: var(--white-smoke);
+    color: ${ props => props.theme === "light" ? 'var(--dark)' : 'var(--white-smoke)'};
 
 `
 
 export const TextJob = styled.small`
     font-size: 14px;
-    color: var(--gray);
+    color: ${ props => props.theme === "light" ? 'var(--dark)' : 'var(--gray)'};
     
 
+`
+
+export const SwitchThemeContainer = styled.div`
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
 `
 
