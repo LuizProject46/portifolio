@@ -7,12 +7,12 @@ import { Profile } from "./components/Profile"
 
 
 const GlobalStyle = createGlobalStyle`
-  .container {
+  body, .container {
     background: ${props => (props.theme === "dark" ? 'var(--light-dark)' : 'var(--white-smoke)')};
   }
   
   @media(max-width: 600px){
-    .container{
+    body, .container{
       background: ${props => (props.theme === "dark" ? 'var(--dark)' : 'var(--white)')};
     }
   }  
